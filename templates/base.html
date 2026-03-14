@@ -1,16 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Leticia — Architecture Student Portfolio">
+    <meta name="description" content="{% block description %}{{ config.extra.description }}{% endblock description %}">
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+    <!-- Fonts: Cormorant Garamond (editorial serif) + DM Sans (clean sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{{ get_url(path='css/style.css') }}">
 </head>
 <body>
-    {% block content %}{% endblock content %}
+    <!-- Grain texture overlay -->
+    <div class="grain"></div>
+
+    <header class="nav">
+        <a href="{{ get_url(path='/') }}" class="nav__logo">L — A</a>
+        <nav class="nav__links">
+            <a href="{{ get_url(path='/') }}" class="nav__link {% if current_path == '/' %}nav__link--active{% endif %}">Inicio</a>
+            <a href="{{ get_url(path='/proyectos/') }}" class="nav__link {% if current_path is starting_with('/proyectos') %}nav__link--active{% endif %}">Proyectos</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <p class="footer__copy">© 2025 Leticia &mdash; Arquitectura</p>
+            <p class="footer__location">Lima · Madrid</p>
+        </div>
+    </footer>
+
 </body>
 </html>

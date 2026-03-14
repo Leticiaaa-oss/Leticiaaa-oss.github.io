@@ -1,25 +1,13 @@
-# The URL the site will be built for
 base_url = "https://Leticiaaa-oss.github.io"
-
-# The site title
-title = "Leticia | Architecture Portfolio"
-
-# The default language
-default_language = "en"
-
-# Whether to automatically compile all Sass files in the sass directory
+title = "Leticia Arquitectura"
+default_language = "es"
 compile_sass = false
-
-# Whether to build a search index of the content
 build_search_index = false
-
-# Whether to generate a feed of the content
 generate_feeds = false
 
 [markdown]
-# Whether to do syntax highlighting
 highlight_code = false
 
 [extra]
-# Put all your custom variables here
 author = "Leticia"
+description = "Estudiante de Arquitectura. De Lima, viviendo en Madrid."

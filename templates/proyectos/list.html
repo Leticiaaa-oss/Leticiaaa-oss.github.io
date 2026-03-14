@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Proyectos — Leticia Arquitectura{% endblock title %}
+{% block description %}Proyectos de arquitectura y diseño urbano de Leticia, estudiante de arquitectura en Madrid.{% endblock description %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div class="page-hero__inner">
+        <span class="label-text">Trabajo</span>
+        <h1 class="page-hero__title">Proyectos</h1>
+        <p class="page-hero__sub">Arquitectura, diseño urbano y espacio público.<br>Proyectos académicos y personales.</p>
+    </div>
+</section>
+
+<section class="projects-section">
+    <div class="projects-section__inner">
+
+        <!-- Project 01 -->
+        <article class="project-full">
+            <div class="project-full__media">
+                <img src="{{ get_url(path='img/project-residential.jpg') }}" alt="Vivienda colectiva en Lavapiés" loading="lazy">
+            </div>
+            <div class="project-full__info">
+                <div class="project-full__meta">
+                    <span class="project-num">01</span>
+                    <span class="project-tag">Vivienda Colectiva</span>
+                </div>
+                <h2 class="project-full__title">Vivienda colectiva<br>en Lavapiés</h2>
+                <p class="project-full__location">Madrid, España &mdash; 2024</p>
+                <p class="project-full__desc">
+                    Proyecto de vivienda social en el barrio de Lavapiés, Madrid. 
+                    Propuesta de densificación que respeta la trama histórica del barrio 
+                    mientras introduce espacios comunitarios en cubierta y planta baja. 
+                    Materialidad de ladrillo visto y hormigón visto. Proyecto académico, ETSAM.
+                </p>
+                <div class="project-full__tags">
+                    <span class="tag">Diseño Arquitectónico</span>
+                    <span class="tag">Vivienda Social</span>
+                    <span class="tag">Hormigón · Ladrillo</span>
+                </div>
+            </div>
+        </article>
+
+        <div class="projects-divider"></div>
+
+        <!-- Project 02 -->
+        <article class="project-full project-full--reverse">
+            <div class="project-full__media">
+                <img src="{{ get_url(path='img/project-library.jpg') }}" alt="Centro Cultural Miraflores" loading="lazy">
+            </div>
+            <div class="project-full__info">
+                <div class="project-full__meta">
+                    <span class="project-num">02</span>
+                    <span class="project-tag">Equipamiento</span>
+                </div>
+                <h2 class="project-full__title">Centro Cultural<br>Miraflores</h2>
+                <p class="project-full__location">Lima, Perú &mdash; 2023</p>
+                <p class="project-full__desc">
+                    Centro cultural y biblioteca pública situado en el distrito de Miraflores, Lima. 
+                    El proyecto surge de la necesidad de crear un espacio de encuentro que dialogue 
+                    con el frente costero del Pacífico. Estructura de concreto expuesto con patios 
+                    interiores que controlan la luz natural. Proyecto de fin de semestre.
+                </p>
+                <div class="project-full__tags">
+                    <span class="tag">Espacio Público</span>
+                    <span class="tag">Biblioteca</span>
+                    <span class="tag">Concreto Expuesto</span>
+                </div>
+            </div>
+        </article>
+
+        <div class="projects-divider"></div>
+
+        <!-- Project 03 -->
+        <article class="project-full">
+            <div class="project-full__media">
+                <img src="{{ get_url(path='img/project-urban.jpg') }}" alt="Plaza del Agua, Retiro" loading="lazy">
+            </div>
+            <div class="project-full__info">
+                <div class="project-full__meta">
+                    <span class="project-num">03</span>
+                    <span class="project-tag">Diseño Urbano</span>
+                </div>
+                <h2 class="project-full__title">Plaza del Agua<br>— Retiro</h2>
+                <p class="project-full__location">Madrid, España &mdash; 2024</p>
+                <p class="project-full__desc">
+                    Intervención en espacio público en el entorno del Parque del Retiro. 
+                    Propuesta de reconfiguración de una plaza degradada mediante láminas de agua, 
+                    pérgolas de acero y vegetación mediterránea de bajo consumo hídrico. 
+                    El agua como elemento estructurador del espacio público y atenuador del calor urbano.
+                </p>
+                <div class="project-full__tags">
+                    <span class="tag">Urbanismo</span>
+                    <span class="tag">Bioclimático</span>
+                    <span class="tag">Espacio Público</span>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="cta__inner">
+        <span class="label-text">Contacto</span>
+        <h2 class="cta__heading">¿Hablamos de arquitectura?</h2>
+        <a href="mailto:leticia@arquitectura.es" class="cta__btn">leticia@arquitectura.es</a>
+    </div>
+</section>
+
+{% endblock content %}
