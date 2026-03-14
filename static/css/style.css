@@ -4,8 +4,8 @@
    Aesthetic: editorial, Photoshop-serious, architectural
    ============================================================ */
 
-/* ─── TOKENS ─────────────────────────────────────────────── */
-:root {
+/* ─── TOKENS — DARK (default) ────────────────────────────── */
+[data-theme="dark"] {
     /* Colour palette */
     --void: #080F10;
     /* near-black with ocean tint */
@@ -50,6 +50,73 @@
 
     /* Easing */
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── TOKENS — LIGHT ─────────────────────────────────────── */
+[data-theme="light"] {
+    --void: #F4F1EC;
+    --deep: #EDE9E1;
+    --surface: #E8E3D8;
+    --line: #CEC9BE;
+    --fog: #B8B2A6;
+
+    --text: #1A2422;
+    --muted: #4A6660;
+    --ghost: #8FA89A;
+
+    --teal: #2E6B5E;
+    --teal-light: #3A8573;
+    --sage: #4A6E58;
+    --foam: #2B5048;
+    --sand: #7A6E58;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── THEME TRANSITION ────────────────────────────────────── */
+body,
+.nav,
+.footer,
+.project-card__info,
+.about__portrait-frame {
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* Light mode body bg */
+[data-theme="light"] body {
+    background: var(--void);
+}
+
+/* Light mode nav backdrop */
+[data-theme="light"] .nav {
+    background: rgba(244, 241, 236, 0.82);
+}
+
+/* Light mode grain more subtle */
+[data-theme="light"] .grain {
+    opacity: 0.018;
+}
+
+/* Light mode hero gradient */
+[data-theme="light"] .hero::before {
+    background:
+        radial-gradient(ellipse 70% 50% at 15% 60%, rgba(46, 107, 94, 0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 70% at 80% 30%, rgba(74, 110, 88, 0.08) 0%, transparent 60%);
+}
+
+/* Light mode project card image — slightly different treatment */
+[data-theme="light"] .project-card__img,
+[data-theme="light"] .project-full__media img {
+    filter: saturate(0.8) brightness(0.95) contrast(1.0);
+}
+
+[data-theme="light"] .project-card:hover .project-card__img,
+[data-theme="light"] .project-full:hover .project-full__media img {
+    filter: saturate(1) brightness(1) contrast(1.0);
 }
 
 /* ─── RESET ──────────────────────────────────────────────── */
@@ -198,6 +265,46 @@ img {
     width: 100%;
     background: var(--foam);
 }
+
+/* ─── THEME TOGGLE BUTTON ────────────────────────────────── */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--fog);
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--muted);
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    border-color: var(--teal-light);
+    color: var(--teal-light);
+    background: rgba(93, 163, 150, 0.08);
+}
+
+/* Show the right icon per theme */
+.theme-toggle__icon {
+    display: none;
+    line-height: 1;
+}
+
+[data-theme="dark"] .theme-toggle__icon--dark {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle__icon--light {
+    display: block;
+}
+
 
 /* ─── LABEL TEXT ─────────────────────────────────────────── */
 .label-text {

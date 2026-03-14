@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ get_url(path='css/style.css') }}">
+
+    <!-- No-FOUC: apply saved theme before paint -->
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
 </head>
 <body>
     <!-- Grain texture overlay -->
@@ -22,6 +30,10 @@
         <nav class="nav__links">
             <a href="{{ get_url(path='/') }}" class="nav__link {% if current_path == '/' %}nav__link--active{% endif %}">Inicio</a>
             <a href="{{ get_url(path='/proyectos/') }}" class="nav__link {% if current_path is starting_with('/proyectos') %}nav__link--active{% endif %}">Proyectos</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                <span class="theme-toggle__icon theme-toggle__icon--dark">&#9790;</span>
+                <span class="theme-toggle__icon theme-toggle__icon--light">&#9788;</span>
+            </button>
         </nav>
     </header>
 
@@ -35,6 +47,16 @@
             <p class="footer__location">Lima · Madrid</p>
         </div>
     </footer>
+
+    <script>
+        var btn = document.getElementById('themeToggle');
+        btn.addEventListener('click', function() {
+            var html = document.documentElement;
+            var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+    </script>
 
 </body>
 </html>
