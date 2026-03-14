@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estudiante de Arquitectura. De Lima, viviendo en Madrid.">
+    <title>Leticia — Arquitectura</title>
+
+    <!-- Fonts: Cormorant Garamond (editorial serif) + DM Sans (clean sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://Leticiaaa-oss.github.io/css/style.css">
+
+    <!-- No-FOUC: apply saved theme before paint -->
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Grain texture overlay -->
+    <div class="grain"></div>
+
+    <header class="nav">
+        <div class="nav__inner">
+            <a href="https://Leticiaaa-oss.github.io" class="nav__logo">Leticia</a>
+            <nav class="nav__links">
+                <a href="https://Leticiaaa-oss.github.io" class="nav__link nav__link--active">Inicio</a>
+                <a href="https://Leticiaaa-oss.github.io/proyectos" class="nav__link ">Proyectos</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <span class="theme-toggle__icon theme-toggle__icon--dark">&#9790;</span>
+                    <span class="theme-toggle__icon theme-toggle__icon--light">&#9788;</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero__text-block">
+        <span class="hero__eyebrow">Estudiante de Arquitectura</span>
+        <h1 class="hero__name">Leticia</h1>
+        <p class="hero__tagline">Forma · Espacio · Materia</p>
+    </div>
+    <div class="hero__scroll-hint">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+    <div class="about__inner">
+        <div class="about__label">
+            <span class="label-text">001 / Sobre mí</span>
+        </div>
+        <div class="about__content">
+            <div class="about__portrait-wrap">
+                <div class="about__portrait-frame">
+                    <img src="https://Leticiaaa-oss.github.io/img/profile.jpeg" alt="Leticia — Estudiante de Arquitectura" class="about__portrait-img">
+                </div>
+            </div>
+            <div class="about__bio">
+                <p class="about__location">De <em>Lima, Perú</em> — Viviendo en <em>Madrid</em></p>
+                <h2 class="about__heading">Construyendo ideas,<br>una planta a la vez.</h2>
+                <p class="about__text">
+                    Soy Leticia, estudiante de arquitectura con una mirada formada entre dos mundos. 
+                    Crecí en Lima, donde la arquitectura convive con la historia precolombina y el caos 
+                    creativo de una ciudad en constante transformación. Hoy vivo en Madrid, donde 
+                    aprendo a escuchar la ciudad, sus calles, sus patios y su luz.
+                </p>
+                <p class="about__text">
+                    Me interesan los espacios que generan emoción antes de ser comprendidos. 
+                    La relación entre estructura y silencio, entre materia y habitante. 
+                    Busco una arquitectura honesta, que responda a las personas y al lugar.
+                </p>
+                <div class="about__tags">
+                    <span class="tag">Diseño Urbano</span>
+                    <span class="tag">Vivienda</span>
+                    <span class="tag">Patrimonio</span>
+                    <span class="tag">Espacio Público</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SELECTED WORK PREVIEW -->
+<section class="selected">
+    <div class="selected__inner">
+        <div class="selected__header">
+            <span class="label-text">002 / Proyectos seleccionados</span>
+            <a href="https://Leticiaaa-oss.github.io/proyectos" class="selected__cta">Ver todos →</a>
+        </div>
+        <div class="selected__grid">
+            <a href="https://Leticiaaa-oss.github.io/proyectos" class="project-card project-card--large">
+                <div class="project-card__img-wrap">
+                    <img src="https://Leticiaaa-oss.github.io/img/project-residential.jpg" alt="Vivienda colectiva en Lavapiés" class="project-card__img" loading="lazy">
+                </div>
+                <div class="project-card__info">
+                    <span class="project-card__cat">Vivienda</span>
+                    <h3 class="project-card__title">Vivienda colectiva<br>en Lavapiés</h3>
+                    <span class="project-card__year">Madrid · 2024</span>
+                </div>
+            </a>
+            <a href="https://Leticiaaa-oss.github.io/proyectos" class="project-card">
+                <div class="project-card__img-wrap">
+                    <img src="https://Leticiaaa-oss.github.io/img/project-library.jpg" alt="Centro cultural Miraflores" class="project-card__img" loading="lazy">
+                </div>
+                <div class="project-card__info">
+                    <span class="project-card__cat">Equipamiento</span>
+                    <h3 class="project-card__title">Centro cultural<br>Miraflores</h3>
+                    <span class="project-card__year">Lima · 2023</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+    <blockquote class="pull-quote">
+        <p>"La arquitectura es el testimonio más fiel de la política de los pueblos."</p>
+        <cite>— Fernando Higueras</cite>
+    </blockquote>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="cta-section">
+    <div class="cta__inner">
+        <span class="label-text">003 / Contacto</span>
+        <h2 class="cta__heading">¿Hablamos?</h2>
+        <a href="mailto:leticia@arquitectura.es" class="cta__btn">leticia@arquitectura.es</a>
+    </div>
+</section>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <p class="footer__copy">© 2025 Leticia &mdash; Arquitectura</p>
+            <p class="footer__location">Lima · Madrid</p>
+        </div>
+    </footer>
+
+    <script>
+        var btn = document.getElementById('themeToggle');
+        btn.addEventListener('click', function() {
+            var html = document.documentElement;
+            var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+    </script>
+
+</body>
+</html>
